@@ -1,5 +1,7 @@
 import Address from "../../domain/entity/address";
 import Customer from "../../domain/entity/customer";
+import sharedEventDispatcher from "../../domain/event/@shared/shared-event-dispatcher";
+import CustomerCreatedEvent from "../../domain/event/customer/customer-created.event";
 import CustomerRepositoryInterface from "../../domain/repository/customer-repository.interface";
 import CustomerModel from "../db/sequelize/model/customer.model";
 
@@ -16,6 +18,8 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
             zip: entity.address?.zip,
             city: entity.address?.city
         })
+
+        sharedEventDispatcher.notify(new CustomerCreatedEvent(entity));
     }
     async update(entity: Customer): Promise<void> {
         await CustomerModel.update(

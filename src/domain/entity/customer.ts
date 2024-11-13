@@ -1,3 +1,5 @@
+import sharedEventDispatcher from "../event/@shared/shared-event-dispatcher";
+import ChangeCustomerAddressEvent from "../event/customer/change-customer-address.event";
 import Address from "./address";
 
 export default class Customer {
@@ -27,6 +29,7 @@ export default class Customer {
 
     changeAddress(address: Address) {
         this._address = address;
+        sharedEventDispatcher.notify(new ChangeCustomerAddressEvent(this));
     }
 
     get address(): Address {
