@@ -1,4 +1,4 @@
-import Address from "../../domain/customer/entity/address";
+import Address from "../../domain/customer/value-object/address";
 import Customer from "../../domain/customer/entity/customer";
 import sharedEventDispatcher from "../../domain/@shared/event/shared-event-dispatcher";
 import CustomerCreatedEvent from "../../domain/customer/event/customer-created.event";
