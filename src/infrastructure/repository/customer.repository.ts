@@ -1,8 +1,8 @@
-import Address from "../../domain/entity/address";
-import Customer from "../../domain/entity/customer";
-import sharedEventDispatcher from "../../domain/event/@shared/shared-event-dispatcher";
-import CustomerCreatedEvent from "../../domain/event/customer/customer-created.event";
-import CustomerRepositoryInterface from "../../domain/repository/customer-repository.interface";
+import Address from "../../domain/customer/entity/address";
+import Customer from "../../domain/customer/entity/customer";
+import sharedEventDispatcher from "../../domain/@shared/event/shared-event-dispatcher";
+import CustomerCreatedEvent from "../../domain/customer/event/customer-created.event";
+import CustomerRepositoryInterface from "../../domain/customer/repository/customer-repository.interface";
 import CustomerModel from "../db/sequelize/model/customer.model";
 
 export default class CustomerRepository implements CustomerRepositoryInterface {

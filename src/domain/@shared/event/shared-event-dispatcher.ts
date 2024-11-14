@@ -1,6 +1,6 @@
-import ChangeCustomerAddressHandler from "../customer/handler/change-customer-address.handler";
-import SendConsoleLog2Handler from "../customer/handler/send-console-log1.handler";
-import SendConsoleLog1Handler from "../customer/handler/send-console-log2.handler";
+import ChangeCustomerAddressHandler from "../../customer/event/handler/change-customer-address.handler";
+import SendConsoleLog2Handler from "../../customer/event/handler/send-console-log1.handler";
+import SendConsoleLog1Handler from "../../customer/event/handler/send-console-log2.handler";
 import EventDispatcher from "./event-dispatcher";
 
 const sharedEventDispatcher = new EventDispatcher();

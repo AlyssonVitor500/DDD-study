@@ -1,5 +1,5 @@
-import sharedEventDispatcher from "../event/@shared/shared-event-dispatcher";
-import ChangeCustomerAddressEvent from "../event/customer/change-customer-address.event";
+import sharedEventDispatcher from "../../@shared/event/shared-event-dispatcher";
+import ChangeCustomerAddressEvent from "../event/change-customer-address.event";
 import Address from "./address";
 
 export default class Customer {
