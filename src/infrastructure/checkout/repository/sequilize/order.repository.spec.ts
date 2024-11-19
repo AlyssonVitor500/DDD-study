@@ -7,7 +7,7 @@ import ProductModel from "../../../product/repository/sequilize/product.model";
 import CustomerRepository from "../../../customer/repository/sequilize/customer.repository";
 import Customer from "../../../../domain/customer/entity/customer";
 import Address from "../../../../domain/customer/value-object/address";
-import ProductRepository from "../../../product/repository/product.repository";
+import ProductRepository from "../../../product/repository/sequilize/product.repository";
 import Product from "../../../../domain/product/entity/product";
 import OrderItem from "../../../../domain/checkout/entity/order-item";
 import Order from "../../../../domain/checkout/entity/order";
