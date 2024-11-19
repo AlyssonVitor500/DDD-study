@@ -1,6 +1,6 @@
 import { InferAttributes } from "sequelize";
 import { BelongsTo, Column, Model, ForeignKey, PrimaryKey, Table, HasMany } from "sequelize-typescript";
-import CustomerModel from "../../../customer/repository/sequilize/customer.model";
+import CustomerModel from "../../../customer/repository/sequelize/customer.model";
 import OrderItemModel from "./order-item.model";
 
 @Table({

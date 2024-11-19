@@ -1,35 +1,35 @@
 import { Sequelize } from "sequelize-typescript";
 import OrderRepository from "./order.repository";
-import CustomerModel from "../../../customer/repository/sequilize/customer.model";
+import CustomerModel from "../../../customer/repository/sequelize/customer.model";
 import OrderModel from "./order.model";
 import OrderItemModel from "./order-item.model";
-import ProductModel from "../../../product/repository/sequilize/product.model";
-import CustomerRepository from "../../../customer/repository/sequilize/customer.repository";
+import ProductModel from "../../../product/repository/sequelize/product.model";
+import CustomerRepository from "../../../customer/repository/sequelize/customer.repository";
 import Customer from "../../../../domain/customer/entity/customer";
 import Address from "../../../../domain/customer/value-object/address";
-import ProductRepository from "../../../product/repository/sequilize/product.repository";
+import ProductRepository from "../../../product/repository/sequelize/product.repository";
 import Product from "../../../../domain/product/entity/product";
 import OrderItem from "../../../../domain/checkout/entity/order-item";
 import Order from "../../../../domain/checkout/entity/order";
 
 describe("Order repository unit tests", () => {
     
-    let sequilize: Sequelize;
+    let sequelize: Sequelize;
 
     beforeEach(async () => {
-        sequilize = new Sequelize({
+        sequelize = new Sequelize({
             dialect: 'sqlite',
             storage: ':memory:',
             logging: false,
             sync: { force: true }
         });
 
-        sequilize.addModels([CustomerModel, OrderModel, OrderItemModel, ProductModel]);
-        await sequilize.sync();
+        sequelize.addModels([CustomerModel, OrderModel, OrderItemModel, ProductModel]);
+        await sequelize.sync();
     });
 
     afterEach(async () => {
-        await sequilize.close();
+        await sequelize.close();
     });
 
     it("should create a order", async () => {

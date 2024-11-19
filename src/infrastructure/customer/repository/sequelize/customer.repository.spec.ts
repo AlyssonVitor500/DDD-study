@@ -6,22 +6,22 @@ import Address from "../../../../domain/customer/value-object/address";
 
 describe("Customer repository unit tests", () => {
     
-    let sequilize: Sequelize;
+    let sequelize: Sequelize;
 
     beforeEach(async () => {
-        sequilize = new Sequelize({
+        sequelize = new Sequelize({
             dialect: 'sqlite',
             storage: ':memory:',
             logging: false,
             sync: { force: true }
         });
 
-        sequilize.addModels([CustomerModel]);
-        await sequilize.sync();
+        sequelize.addModels([CustomerModel]);
+        await sequelize.sync();
     });
 
     afterEach(async () => {
-        await sequilize.close();
+        await sequelize.close();
     });
 
     it ("should create a customer", async () => {
