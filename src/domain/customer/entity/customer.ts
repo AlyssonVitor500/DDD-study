@@ -27,17 +27,17 @@ export default class Customer {
         return this._active;
     }
 
-    changeAddress(address: Address) {
-        this._address = address;
-        sharedEventDispatcher.notify(new ChangeCustomerAddressEvent(this));
-    }
-
     get address(): Address {
         return this._address;
     }
 
     get rewardPoints(): number {
         return this._rewardPoints;
+    }
+    
+    changeAddress(address: Address) {
+        this._address = address;
+        sharedEventDispatcher.notify(new ChangeCustomerAddressEvent(this));
     }
 
     addRewardPoints(points: number) {
